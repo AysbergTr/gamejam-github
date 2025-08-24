@@ -38,8 +38,11 @@ func find_color():
 	var viewport_tex = get_viewport().get_texture()
 	var img = viewport_tex.get_image()
 	var mouse_pos = get_viewport().get_mouse_position()
+	
 	var color = img.get_pixel(mouse_pos.x, mouse_pos.y)
+	#inverse
 	var inverse = Color(1.0 - color.r, 1.0 - color.g, 1.0 - color.b, color.a)
+
 	return inverse
 	
 func spawn_particle():
