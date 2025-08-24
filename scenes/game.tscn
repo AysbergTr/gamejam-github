@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://7mqlexcnwkvy"]
+[gd_scene load_steps=7 format=3 uid="uid://7mqlexcnwkvy"]
 
 [ext_resource type="Script" uid="uid://b03ke3pjmjvfd" path="res://scenes/game.gd" id="1_iywne"]
 [ext_resource type="Texture2D" uid="uid://beb1jgo6pbulf" path="res://assets/PlainBiscuit.png" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://cve6wjgm3ulyn" path="res://scenes/biscuit_deneme.gd" id="3_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://dlc0hucnvfwjk" path="res://assets/door (1).png" id="4_lbhrr"]
+[ext_resource type="AudioStream" uid="uid://cjddc7ckfa4xc" path="res://sfx/clicking_sound.wav" id="5_iywne"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lnu2h"]
 
@@ -35,6 +36,9 @@ zoom = Vector2(3, 3)
 position = Vector2(-71, -28)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("4_lbhrr")
+
+[node name="ClickingSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_iywne")
 
 [connection signal="mouse_entered" from="Area2D" to="Area2D" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="Area2D" method="_on_mouse_exited"]
