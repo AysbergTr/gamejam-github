@@ -1,12 +1,11 @@
 extends Node2D
 
-@onready var camera: Camera2D = $Camera2D
+@onready var clicking_sound: AudioStreamPlayer2D = $ClickingSound
+
 const CLICKING_PARTICLE = preload("res://scenes/clicking_particle.tscn")
 
-
-# The starting range of possible offsets using random values
+@onready var camera: Camera2D = $Camera2D
 @export var RANDOM_SHAKE_STRENGTH: float = 30.0
-# Multiplier for lerping the shake strength to zero
 @export var SHAKE_DECAY_RATE: float = 5.0
 
 @onready var camera_2d: Camera2D = $Camera2D
@@ -54,7 +53,8 @@ func spawn_particle():
 	fx.color = find_color()
 	
 func _input(event):
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and event.is_pressed():
 		print("Mouse Click/Unclick at: ", event.position)
+		clicking_sound.play()
 		spawn_particle()
 		apply_shake()
