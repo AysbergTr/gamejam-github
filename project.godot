@@ -14,3 +14,12 @@ config/name="RiskItForTheBuscuitOrGoHome"
 run/main_scene="uid://7mqlexcnwkvy"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+mouse_cursor/custom_image="uid://mgbakxnts8rp"
+mouse_cursor/custom_image_hotspot=Vector2(8, 8)
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
