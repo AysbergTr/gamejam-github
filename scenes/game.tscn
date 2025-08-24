@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://7mqlexcnwkvy"]
+[gd_scene load_steps=20 format=3 uid="uid://7mqlexcnwkvy"]
 
 [ext_resource type="Script" uid="uid://b03ke3pjmjvfd" path="res://scenes/game.gd" id="1_iywne"]
 [ext_resource type="Texture2D" uid="uid://beb1jgo6pbulf" path="res://assets/PlainBiscuit.png" id="1_uwrxv"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://drwyejbsvu4m7" path="res://assets/Cookie Shapes/Star.png" id="15_bhx41"]
 [ext_resource type="Texture2D" uid="uid://c38cubea3yxij" path="res://assets/Cookie Shapes/triangle.png" id="16_qnb83"]
 [ext_resource type="Texture2D" uid="uid://c4xvsnwjh880x" path="res://assets/Cookie Shapes/Umbrella.png" id="17_sww3w"]
+[ext_resource type="Texture2D" uid="uid://c30j7mbeswiwg" path="res://assets/TriangleBiscuit (2).png" id="18_ssvqc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lnu2h"]
 
@@ -30,7 +31,7 @@ color = Color(0.0745098, 0.137255, 0.533333, 1)
 polygon = PackedVector2Array(0, 0, 0, 250, 500, 250, 500, 0)
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(0, -25)
+position = Vector2(-28, 25)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("3_lbhrr")
 
@@ -54,51 +55,67 @@ stream = ExtResource("5_iywne")
 
 [node name="8PointStar" type="Sprite2D" parent="."]
 position = Vector2(91, -67)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_rysoc")
 
 [node name="Circle" type="Sprite2D" parent="."]
 position = Vector2(-131, 71)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_ssvqc")
 
 [node name="Fnowflake" type="Sprite2D" parent="."]
 position = Vector2(156, -73)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_264po")
 
 [node name="Heart" type="Sprite2D" parent="."]
 position = Vector2(142, 6)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("9_1kice")
 
 [node name="Lightning" type="Sprite2D" parent="."]
 position = Vector2(53, -12)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("10_5newe")
 
 [node name="Moon" type="Sprite2D" parent="."]
 position = Vector2(5, 65)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("11_37s47")
 
 [node name="Pentagon" type="Sprite2D" parent="."]
 position = Vector2(-26, -75)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("12_bt5mj")
 
 [node name="Skull" type="Sprite2D" parent="."]
 position = Vector2(130, 71)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("13_e1j6l")
 
 [node name="Squre" type="Sprite2D" parent="."]
 position = Vector2(65, 51)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("14_pl11u")
 
 [node name="Star" type="Sprite2D" parent="."]
 position = Vector2(-65, 59)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("15_bhx41")
 
 [node name="Triangle" type="Sprite2D" parent="."]
 position = Vector2(-150, 3)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("16_qnb83")
 
 [node name="Umbrella" type="Sprite2D" parent="."]
 position = Vector2(-147, -69)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("17_sww3w")
+
+[node name="TriangleBiscuit(2)" type="Sprite2D" parent="."]
+position = Vector2(2.00001, -25)
+texture = ExtResource("18_ssvqc")
 
 [connection signal="mouse_entered" from="Area2D" to="Area2D" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="Area2D" method="_on_mouse_exited"]
