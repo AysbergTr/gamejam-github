@@ -1,3 +1,21 @@
-[gd_scene format=3 uid="uid://7mqlexcnwkvy"]
+[gd_scene load_steps=3 format=3 uid="uid://7mqlexcnwkvy"]
+
+[ext_resource type="Texture2D" uid="uid://beb1jgo6pbulf" path="res://assets/PlainBuscuit.png" id="1_uwrxv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yqjtg"]
 
 [node name="Game" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(0, -10)
+
+[node name="PlainBuscuit" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(4.76837e-07, 4.76837e-07)
+scale = Vector2(0.3125, 0.3125)
+texture = ExtResource("1_uwrxv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_yqjtg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
