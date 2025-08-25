@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0u2gdd5mt2on"
-path="res://.godot/imported/heart.png-ee15d7aa4755a0cc987c5d2b8cb67fa7.ctex"
+uid="uid://c8nf3hmvi13ia"
+path="res://.godot/imported/MoonBiscuit.png-f24aea45e9368499be3abb92586b5f92.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Cookie Shapes/heart.png"
-dest_files=["res://.godot/imported/heart.png-ee15d7aa4755a0cc987c5d2b8cb67fa7.ctex"]
+source_file="res://assets/Cookie Shapes/MoonBiscuit.png"
+dest_files=["res://.godot/imported/MoonBiscuit.png-f24aea45e9368499be3abb92586b5f92.ctex"]
 
 [params]
 

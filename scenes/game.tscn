@@ -1,22 +1,12 @@
-[gd_scene load_steps=19 format=3 uid="uid://7mqlexcnwkvy"]
+[gd_scene load_steps=9 format=3 uid="uid://7mqlexcnwkvy"]
 
-[ext_resource type="Script" uid="uid://b03ke3pjmjvfd" path="res://scenes/game.gd" id="1_iywne"]
+[ext_resource type="Script" uid="uid://b03ke3pjmjvfd" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="Texture2D" uid="uid://beb1jgo6pbulf" path="res://assets/PlainBiscuit.png" id="1_uwrxv"]
-[ext_resource type="Script" uid="uid://cve6wjgm3ulyn" path="res://scenes/biscuit_deneme.gd" id="3_lbhrr"]
+[ext_resource type="Script" uid="uid://cve6wjgm3ulyn" path="res://scripts/biscuit_deneme.gd" id="3_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://dlc0hucnvfwjk" path="res://assets/door (1).png" id="4_lbhrr"]
 [ext_resource type="AudioStream" uid="uid://cjddc7ckfa4xc" path="res://sfx/clicking_sound.wav" id="5_iywne"]
-[ext_resource type="Texture2D" uid="uid://dwgbq37dagl87" path="res://assets/Cookie Shapes/8_point_star.png" id="6_rysoc"]
-[ext_resource type="Texture2D" uid="uid://dkn36exfqwryw" path="res://assets/Cookie Shapes/circle.png" id="7_ssvqc"]
-[ext_resource type="Texture2D" uid="uid://korplmhih5fk" path="res://assets/Cookie Shapes/fnowflake.png" id="8_264po"]
-[ext_resource type="Texture2D" uid="uid://b0u2gdd5mt2on" path="res://assets/Cookie Shapes/heart.png" id="9_1kice"]
-[ext_resource type="Texture2D" uid="uid://f4uytwfvx4ue" path="res://assets/Cookie Shapes/lightning.png" id="10_5newe"]
-[ext_resource type="Texture2D" uid="uid://bixpw3k6r52rb" path="res://assets/Cookie Shapes/Moon.png" id="11_37s47"]
-[ext_resource type="Texture2D" uid="uid://7lulrx17iiab" path="res://assets/Cookie Shapes/pentagon.png" id="12_bt5mj"]
-[ext_resource type="Texture2D" uid="uid://d17i7jvgfx04j" path="res://assets/Cookie Shapes/Skull.png" id="13_e1j6l"]
-[ext_resource type="Texture2D" uid="uid://ton0k8bjapgy" path="res://assets/Cookie Shapes/squre.png" id="14_pl11u"]
-[ext_resource type="Texture2D" uid="uid://drwyejbsvu4m7" path="res://assets/Cookie Shapes/Star.png" id="15_bhx41"]
-[ext_resource type="Texture2D" uid="uid://c38cubea3yxij" path="res://assets/Cookie Shapes/triangle.png" id="16_qnb83"]
-[ext_resource type="Texture2D" uid="uid://c4xvsnwjh880x" path="res://assets/Cookie Shapes/Umbrella.png" id="17_sww3w"]
+[ext_resource type="PackedScene" uid="uid://i28mfgee7hxj" path="res://scenes/door.tscn" id="6_p57ef"]
+[ext_resource type="Texture2D" uid="uid://dc1sskcd56dmg" path="res://assets/Cookie Shapes/CircleBiscuit.png" id="7_u5sy4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lnu2h"]
 
@@ -52,53 +42,12 @@ texture = ExtResource("4_lbhrr")
 [node name="ClickingSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_iywne")
 
-[node name="8PointStar" type="Sprite2D" parent="."]
-position = Vector2(91, -67)
-texture = ExtResource("6_rysoc")
+[node name="Door" parent="." instance=ExtResource("6_p57ef")]
+position = Vector2(-110, 0)
 
-[node name="Circle" type="Sprite2D" parent="."]
-position = Vector2(-131, 71)
-texture = ExtResource("7_ssvqc")
-
-[node name="Fnowflake" type="Sprite2D" parent="."]
-position = Vector2(156, -73)
-texture = ExtResource("8_264po")
-
-[node name="Heart" type="Sprite2D" parent="."]
-position = Vector2(142, 6)
-texture = ExtResource("9_1kice")
-
-[node name="Lightning" type="Sprite2D" parent="."]
-position = Vector2(53, -12)
-texture = ExtResource("10_5newe")
-
-[node name="Moon" type="Sprite2D" parent="."]
-position = Vector2(5, 65)
-texture = ExtResource("11_37s47")
-
-[node name="Pentagon" type="Sprite2D" parent="."]
-position = Vector2(-26, -75)
-texture = ExtResource("12_bt5mj")
-
-[node name="Skull" type="Sprite2D" parent="."]
-position = Vector2(130, 71)
-texture = ExtResource("13_e1j6l")
-
-[node name="Squre" type="Sprite2D" parent="."]
-position = Vector2(65, 51)
-texture = ExtResource("14_pl11u")
-
-[node name="Star" type="Sprite2D" parent="."]
-position = Vector2(-65, 59)
-texture = ExtResource("15_bhx41")
-
-[node name="Triangle" type="Sprite2D" parent="."]
-position = Vector2(-150, 3)
-texture = ExtResource("16_qnb83")
-
-[node name="Umbrella" type="Sprite2D" parent="."]
-position = Vector2(-147, -69)
-texture = ExtResource("17_sww3w")
+[node name="CircleBiscuit" type="Sprite2D" parent="."]
+position = Vector2(-69, 50)
+texture = ExtResource("7_u5sy4")
 
 [connection signal="mouse_entered" from="Area2D" to="Area2D" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="Area2D" method="_on_mouse_exited"]

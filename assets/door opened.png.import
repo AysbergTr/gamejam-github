@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4xvsnwjh880x"
-path="res://.godot/imported/Umbrella.png-a5f70810f452a6b5143f3c3a4465d83d.ctex"
+uid="uid://ma4c4lev3xve"
+path="res://.godot/imported/door opened.png-b74e3816f5eb6f24adc17da5a0568438.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Cookie Shapes/Umbrella.png"
-dest_files=["res://.godot/imported/Umbrella.png-a5f70810f452a6b5143f3c3a4465d83d.ctex"]
+source_file="res://assets/door opened.png"
+dest_files=["res://.godot/imported/door opened.png-b74e3816f5eb6f24adc17da5a0568438.ctex"]
 
 [params]
 

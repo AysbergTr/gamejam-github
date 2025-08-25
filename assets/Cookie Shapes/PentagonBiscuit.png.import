@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c38cubea3yxij"
-path="res://.godot/imported/triangle.png-e6b2526d6e6a759f766655041ae5dfc0.ctex"
+uid="uid://drj4a4r53yw2n"
+path="res://.godot/imported/PentagonBiscuit.png-e83957a2ccbfb7ddb5ea637e05b37033.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Cookie Shapes/triangle.png"
-dest_files=["res://.godot/imported/triangle.png-e6b2526d6e6a759f766655041ae5dfc0.ctex"]
+source_file="res://assets/Cookie Shapes/PentagonBiscuit.png"
+dest_files=["res://.godot/imported/PentagonBiscuit.png-e83957a2ccbfb7ddb5ea637e05b37033.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7lulrx17iiab"
-path="res://.godot/imported/pentagon.png-c7828a07edcc19dcbc15f54dcd83e88c.ctex"
+uid="uid://dc1sskcd56dmg"
+path="res://.godot/imported/CircleBiscuit.png-7688e236ef994f4f346a5133b41d9033.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Cookie Shapes/pentagon.png"
-dest_files=["res://.godot/imported/pentagon.png-c7828a07edcc19dcbc15f54dcd83e88c.ctex"]
+source_file="res://assets/Cookie Shapes/CircleBiscuit.png"
+dest_files=["res://.godot/imported/CircleBiscuit.png-7688e236ef994f4f346a5133b41d9033.ctex"]
 
 [params]
 

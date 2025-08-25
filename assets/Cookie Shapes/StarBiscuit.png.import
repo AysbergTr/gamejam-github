@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f4uytwfvx4ue"
-path="res://.godot/imported/lightning.png-5b7f8d5197cf78f6807c972bc810ea31.ctex"
+uid="uid://bv5ai4ww2nwju"
+path="res://.godot/imported/StarBiscuit.png-8bc4543b778f9468fcb8989d0d009620.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Cookie Shapes/lightning.png"
-dest_files=["res://.godot/imported/lightning.png-5b7f8d5197cf78f6807c972bc810ea31.ctex"]
+source_file="res://assets/Cookie Shapes/StarBiscuit.png"
+dest_files=["res://.godot/imported/StarBiscuit.png-8bc4543b778f9468fcb8989d0d009620.ctex"]
 
 [params]
 

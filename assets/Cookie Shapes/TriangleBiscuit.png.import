@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ton0k8bjapgy"
-path="res://.godot/imported/squre.png-aea7d4f36cf2e1e106243ff4f6866aad.ctex"
+uid="uid://ddtrpf7j4f8qh"
+path="res://.godot/imported/TriangleBiscuit.png-2a68fc118e333ee008c145270864bdf4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Cookie Shapes/squre.png"
-dest_files=["res://.godot/imported/squre.png-aea7d4f36cf2e1e106243ff4f6866aad.ctex"]
+source_file="res://assets/Cookie Shapes/TriangleBiscuit.png"
+dest_files=["res://.godot/imported/TriangleBiscuit.png-2a68fc118e333ee008c145270864bdf4.ctex"]
 
 [params]
 
