@@ -35,6 +35,38 @@ func GameOver() -> void:
 	print("Game over")
 
 
+
+#Changes the cursor image and the clicking sound
+func _on_mouse_entered() -> void:
+	Input.set_custom_mouse_cursor(NEEDLE, Input.CURSOR_ARROW, Vector2(24, 36))
+	clicking_sound.stream = COOKIE
+func _on_mouse_exited() -> void:
+	Input.set_custom_mouse_cursor(USUAL_CURSOR, Input.CURSOR_ARROW, Vector2(8, 8)) 
+	clicking_sound.stream = CLICKING_SOUND
+
+#clicking
+func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.is_pressed():
+		#print("Mouse Click/Unclick at: ", event.position)
+		pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #All inside collisions options (its not a good code)
 func _on_triangle_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if CookieName == 0:
@@ -66,15 +98,17 @@ func _on_pentagon_input_event(viewport: Node, event: InputEvent, shape_idx: int)
 		if event is InputEventMouseButton and event.is_pressed():
 			GameOver()
 
-#Changes the cursor image and the clicking sound
-func _on_mouse_entered() -> void:
-	Input.set_custom_mouse_cursor(NEEDLE, Input.CURSOR_ARROW, Vector2(24, 36))
-	clicking_sound.stream = COOKIE
-func _on_mouse_exited() -> void:
-	Input.set_custom_mouse_cursor(USUAL_CURSOR, Input.CURSOR_ARROW, Vector2(8, 8)) 
-	clicking_sound.stream = CLICKING_SOUND
+func _on_umbrella_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if CookieName == 6:
+		if event is InputEventMouseButton and event.is_pressed():
+			GameOver()
 
-func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.is_pressed():
-		#print("Mouse Click/Unclick at: ", event.position)
-		pass
+func _on_moon_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if CookieName == 7:
+		if event is InputEventMouseButton and event.is_pressed():
+			GameOver()
+
+func _on_thunder_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if CookieName == 8:
+		if event is InputEventMouseButton and event.is_pressed():
+			GameOver()
