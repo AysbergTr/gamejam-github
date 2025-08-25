@@ -1,14 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://7mqlexcnwkvy"]
+[gd_scene load_steps=5 format=3 uid="uid://7mqlexcnwkvy"]
 
 [ext_resource type="Script" uid="uid://b03ke3pjmjvfd" path="res://scripts/game.gd" id="1_iywne"]
-[ext_resource type="Texture2D" uid="uid://beb1jgo6pbulf" path="res://assets/PlainBiscuit.png" id="1_uwrxv"]
-[ext_resource type="Script" uid="uid://cve6wjgm3ulyn" path="res://scripts/biscuit_deneme.gd" id="3_lbhrr"]
-[ext_resource type="Texture2D" uid="uid://dlc0hucnvfwjk" path="res://assets/door (1).png" id="4_lbhrr"]
 [ext_resource type="AudioStream" uid="uid://cjddc7ckfa4xc" path="res://sfx/clicking_sound.wav" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://i28mfgee7hxj" path="res://scenes/door.tscn" id="6_p57ef"]
-[ext_resource type="Texture2D" uid="uid://dc1sskcd56dmg" path="res://assets/Cookie Shapes/CircleBiscuit.png" id="7_u5sy4"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://g42yt0gbrh85" path="res://scenes/biscuit.tscn" id="8_gee14"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_iywne")
@@ -19,25 +14,8 @@ position = Vector2(-249, -139)
 color = Color(0.0745098, 0.137255, 0.533333, 1)
 polygon = PackedVector2Array(0, 0, 0, 250, 500, 250, 500, 0)
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(0, -25)
-scale = Vector2(0.8, 0.8)
-script = ExtResource("3_lbhrr")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(3.22, 3.22)
-shape = SubResource("CircleShape2D_lnu2h")
-
-[node name="PlainBiscuit" type="Sprite2D" parent="Area2D"]
-texture = ExtResource("1_uwrxv")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
-
-[node name="Door(1)" type="Sprite2D" parent="."]
-position = Vector2(-71, -28)
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("4_lbhrr")
 
 [node name="ClickingSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_iywne")
@@ -45,9 +23,6 @@ stream = ExtResource("5_iywne")
 [node name="Door" parent="." instance=ExtResource("6_p57ef")]
 position = Vector2(-110, 0)
 
-[node name="CircleBiscuit" type="Sprite2D" parent="."]
-position = Vector2(-69, 50)
-texture = ExtResource("7_u5sy4")
-
-[connection signal="mouse_entered" from="Area2D" to="Area2D" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D" to="Area2D" method="_on_mouse_exited"]
+[node name="Biscuit" parent="." instance=ExtResource("8_gee14")]
+position = Vector2(-3, 31)
+CookieName = 4

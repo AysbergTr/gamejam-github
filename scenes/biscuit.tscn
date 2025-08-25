@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://g42yt0gbrh85"]
+
+[ext_resource type="Script" uid="uid://v2o6f70pegce" path="res://scripts/Biscuit.gd" id="1_ug7ah"]
+[ext_resource type="Texture2D" uid="uid://drj4a4r53yw2n" path="res://assets/Cookie Shapes/PentagonBiscuit.png" id="2_ug7ah"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f5day"]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ug7ah"]
+radius = 35.0143
+
+[node name="Biscuit" type="Area2D"]
+script = ExtResource("1_ug7ah")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -32)
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_f5day")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -32)
+scale = Vector2(2, 2)
+texture = ExtResource("2_ug7ah")
+
+[node name="Triangle" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Triangle"]
+polygon = PackedVector2Array(4, -70, -34, -8, 40, -11)
+
+[node name="Square" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Square"]
+polygon = PackedVector2Array(-23, -60, -23, -8, 29, -8, 29, -60)
+
+[node name="Circle" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Circle"]
+position = Vector2(1, -34)
+shape = SubResource("CircleShape2D_ug7ah")
+
+[node name="Star" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Star"]
+polygon = PackedVector2Array(4, -63, -2, -49, -18, -48, -4, -35, -13, -13, 5, -27, 22, -13, 15, -36, 27, -48, 9, -49)
+
+[node name="Heart" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Heart"]
+polygon = PackedVector2Array(1, -39, -5, -43, -8, -54, -18, -56, -24, -49, -24, -38, 0, 2, 25, -40, 25, -48, 18, -57, 8, -54, 7, -46)
+
+[node name="Pentagon" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pentagon"]
+polygon = PackedVector2Array(-1, -67, -34, -42, -23, -5, 12, -3, 30, -43)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="input_event" from="Triangle" to="." method="_on_triangle_input_event"]
+[connection signal="input_event" from="Square" to="." method="_on_square_input_event"]
+[connection signal="input_event" from="Circle" to="." method="_on_circle_input_event"]
+[connection signal="input_event" from="Star" to="." method="_on_star_input_event"]
+[connection signal="input_event" from="Heart" to="." method="_on_heart_input_event"]
+[connection signal="input_event" from="Pentagon" to="." method="_on_pentagon_input_event"]
