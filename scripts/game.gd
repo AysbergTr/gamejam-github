@@ -54,7 +54,7 @@ func spawn_particle():
 	
 func _input(event):
 	if event is InputEventMouseButton and event.is_pressed():
-		print("Mouse Click/Unclick at: ", event.position)
+		#print("Mouse Click/Unclick at: ", event.position)
 		clicking_sound.play()
 		spawn_particle()
 		apply_shake()
