@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://g42yt0gbrh85"]
 
 [ext_resource type="Script" uid="uid://v2o6f70pegce" path="res://scripts/Biscuit.gd" id="1_ug7ah"]
-[ext_resource type="Texture2D" uid="uid://drj4a4r53yw2n" path="res://assets/Cookie Shapes/PentagonBiscuit.png" id="2_ug7ah"]
+[ext_resource type="Texture2D" uid="uid://ddtrpf7j4f8qh" path="res://assets/Cookie Shapes/TriangleBiscuit.png" id="2_ug7ah"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f5day"]
 radius = 32.0
@@ -22,43 +22,72 @@ position = Vector2(1, -32)
 scale = Vector2(2, 2)
 texture = ExtResource("2_ug7ah")
 
-[node name="Triangle" type="Area2D" parent="."]
+[node name="Shape Collisions" type="Node2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Triangle"]
+[node name="Triangle" type="Area2D" parent="Shape Collisions"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shape Collisions/Triangle"]
+visible = false
 polygon = PackedVector2Array(4, -70, -34, -8, 40, -11)
 
-[node name="Square" type="Area2D" parent="."]
+[node name="Square" type="Area2D" parent="Shape Collisions"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Square"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shape Collisions/Square"]
+visible = false
 polygon = PackedVector2Array(-23, -60, -23, -8, 29, -8, 29, -60)
 
-[node name="Circle" type="Area2D" parent="."]
+[node name="Circle" type="Area2D" parent="Shape Collisions"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Circle"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shape Collisions/Circle"]
+visible = false
 position = Vector2(1, -34)
 shape = SubResource("CircleShape2D_ug7ah")
 
-[node name="Star" type="Area2D" parent="."]
+[node name="Star" type="Area2D" parent="Shape Collisions"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Star"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shape Collisions/Star"]
+visible = false
 polygon = PackedVector2Array(4, -63, -2, -49, -18, -48, -4, -35, -13, -13, 5, -27, 22, -13, 15, -36, 27, -48, 9, -49)
 
-[node name="Heart" type="Area2D" parent="."]
+[node name="Heart" type="Area2D" parent="Shape Collisions"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Heart"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shape Collisions/Heart"]
+visible = false
 polygon = PackedVector2Array(1, -39, -5, -43, -8, -54, -18, -56, -24, -49, -24, -38, 0, 2, 25, -40, 25, -48, 18, -57, 8, -54, 7, -46)
 
-[node name="Pentagon" type="Area2D" parent="."]
+[node name="Pentagon" type="Area2D" parent="Shape Collisions"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pentagon"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shape Collisions/Pentagon"]
+visible = false
 polygon = PackedVector2Array(-1, -67, -34, -42, -23, -5, 12, -3, 30, -43)
+
+[node name="Umbrella" type="Area2D" parent="Shape Collisions"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shape Collisions/Umbrella"]
+visible = false
+polygon = PackedVector2Array(17, -65, -9, -66, -18, -61, -27, -49, -30, -40, 0, -40, 1, -12, -4, -6, -10, -7, -11, -12, -15, -12, -15, -2, -6, 0, 2, -2, 3, -8, 7, -8, 7, -40, 37, -40, 36, -48, 29, -57)
+
+[node name="Moon" type="Area2D" parent="Shape Collisions"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shape Collisions/Moon"]
+visible = false
+polygon = PackedVector2Array(-2, -70, -15, -65, -23, -57, -29, -45, -31, -34, -29, -22, -22, -11, -14, -3, -4, 1, -12, -13, -16, -27, -14, -44, -12, -58)
+
+[node name="Thunder" type="Area2D" parent="Shape Collisions"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shape Collisions/Thunder"]
+visible = false
+polygon = PackedVector2Array(-8, -66, -19, -36, -3, -36, -3, -27, -6, -17, -9, -1, 3, -11, 21, -32, 5, -32, 6, -36, 21, -66)
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
-[connection signal="input_event" from="Triangle" to="." method="_on_triangle_input_event"]
-[connection signal="input_event" from="Square" to="." method="_on_square_input_event"]
-[connection signal="input_event" from="Circle" to="." method="_on_circle_input_event"]
-[connection signal="input_event" from="Star" to="." method="_on_star_input_event"]
-[connection signal="input_event" from="Heart" to="." method="_on_heart_input_event"]
-[connection signal="input_event" from="Pentagon" to="." method="_on_pentagon_input_event"]
+[connection signal="input_event" from="Shape Collisions/Triangle" to="." method="_on_triangle_input_event"]
+[connection signal="input_event" from="Shape Collisions/Square" to="." method="_on_square_input_event"]
+[connection signal="input_event" from="Shape Collisions/Circle" to="." method="_on_circle_input_event"]
+[connection signal="input_event" from="Shape Collisions/Star" to="." method="_on_star_input_event"]
+[connection signal="input_event" from="Shape Collisions/Heart" to="." method="_on_heart_input_event"]
+[connection signal="input_event" from="Shape Collisions/Pentagon" to="." method="_on_pentagon_input_event"]
+[connection signal="input_event" from="Shape Collisions/Umbrella" to="." method="_on_umbrella_input_event"]
+[connection signal="input_event" from="Shape Collisions/Moon" to="." method="_on_moon_input_event"]
+[connection signal="input_event" from="Shape Collisions/Thunder" to="." method="_on_thunder_input_event"]
