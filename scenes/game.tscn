@@ -25,4 +25,4 @@ position = Vector2(-110, 0)
 
 [node name="Biscuit" parent="." instance=ExtResource("8_gee14")]
 position = Vector2(-3, 31)
-CookieName = 6
+CookieName = 0

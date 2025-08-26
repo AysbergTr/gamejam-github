@@ -53,7 +53,7 @@ func spawn_particle():
 	fx.color = find_color()
 	
 func _input(event):
-	if event is InputEventMouseButton and event.is_pressed():
+	if event.is_action_pressed("click"):
 		#print("Mouse Click/Unclick at: ", event.position)
 		clicking_sound.play()
 		spawn_particle()
