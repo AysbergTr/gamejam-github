@@ -23,13 +23,28 @@ const PENTAGON_BISCUIT = preload("res://assets/Cookie Shapes/PentagonBiscuit.png
 const UMBREALLA_BISCUIT = preload("res://assets/Cookie Shapes/UmbreallaBiscuit.png")
 const MOON_BISCUIT = preload("res://assets/Cookie Shapes/MoonBiscuit.png")
 const THUNDER_BISCUIT = preload("res://assets/Cookie Shapes/ThunderBiscuit.png")
-
+#shape list
 var CookieShape := [TRIANGLE_BISCUIT, SQUARE_BISCUIT, CIRCLE_BISCUIT,
 				   STAR_BISCUIT, HEART_BISCUIT, PENTAGON_BISCUIT,
 				   UMBREALLA_BISCUIT, MOON_BISCUIT, THUNDER_BISCUIT]
+
+#Cracking variables
+@onready var segments: Node2D = $"Shape Collisions/Triangle/Segments"
+var clicked_segments := 0
+
+
+
 func _ready() -> void:
 	print(CookieName)
 	sprite_2d.texture = CookieShape[CookieName]
+	for child in segments.get_children():
+		child.connect("clicked", _on_segment_clicked)
+
+#Checks when a segment clicked
+func _on_segment_clicked() -> void:
+	clicked_segments += 1
+	if clicked_segments == segments.get_children().size():
+		print("hepsi oldu")
 	
 func GameOver() -> void:
 	print("Game over")
@@ -46,8 +61,7 @@ func _on_mouse_exited() -> void:
 
 #clicking
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.is_pressed():
-		#print("Mouse Click/Unclick at: ", event.position)
+	if event.is_action_pressed("click"):
 		pass
 
 
