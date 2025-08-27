@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://g42yt0gbrh85"]
 
 [ext_resource type="Script" uid="uid://v2o6f70pegce" path="res://scripts/Biscuit.gd" id="1_ug7ah"]
-[ext_resource type="Texture2D" uid="uid://ddtrpf7j4f8qh" path="res://assets/Cookie Shapes/TriangleBiscuit.png" id="2_ug7ah"]
+[ext_resource type="Texture2D" uid="uid://dpjukeauoq0ba" path="res://assets/Cookie Shapes/SquareBiscuit.png" id="2_7b2ar"]
 [ext_resource type="PackedScene" uid="uid://cmiwaubc7j8nx" path="res://scenes/segment.tscn" id="3_7b2ar"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f5day"]
@@ -21,99 +21,161 @@ shape = SubResource("CircleShape2D_f5day")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, -32)
 scale = Vector2(2, 2)
-texture = ExtResource("2_ug7ah")
+texture = ExtResource("2_7b2ar")
 
 [node name="Shape Collisions" type="Node2D" parent="."]
 
 [node name="Triangle" type="Area2D" parent="Shape Collisions"]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shape Collisions/Triangle"]
 position = Vector2(0, -1)
 polygon = PackedVector2Array(3, -67, -31, -9, 37, -11)
 
-[node name="Segments" type="Node2D" parent="Shape Collisions/Triangle"]
+[node name="tri_segments" type="Node2D" parent="Shape Collisions/Triangle"]
 
-[node name="segment" parent="Shape Collisions/Triangle/Segments" instance=ExtResource("3_7b2ar")]
+[node name="segment" parent="Shape Collisions/Triangle/tri_segments" instance=ExtResource("3_7b2ar")]
 position = Vector2(-34, -10)
 rotation = 0.458452
 
-[node name="segment3" parent="Shape Collisions/Triangle/Segments" instance=ExtResource("3_7b2ar")]
+[node name="segment3" parent="Shape Collisions/Triangle/tri_segments" instance=ExtResource("3_7b2ar")]
 position = Vector2(-37, -9)
 rotation = 1.59855
 
-[node name="segment4" parent="Shape Collisions/Triangle/Segments" instance=ExtResource("3_7b2ar")]
+[node name="segment4" parent="Shape Collisions/Triangle/tri_segments" instance=ExtResource("3_7b2ar")]
 position = Vector2(-23, -9)
 rotation = 1.59855
 
-[node name="segment5" parent="Shape Collisions/Triangle/Segments" instance=ExtResource("3_7b2ar")]
+[node name="segment5" parent="Shape Collisions/Triangle/tri_segments" instance=ExtResource("3_7b2ar")]
 position = Vector2(-9, -9)
 rotation = 1.59855
 
-[node name="segment6" parent="Shape Collisions/Triangle/Segments" instance=ExtResource("3_7b2ar")]
+[node name="segment6" parent="Shape Collisions/Triangle/tri_segments" instance=ExtResource("3_7b2ar")]
 position = Vector2(5, -9)
 rotation = 1.59855
 
-[node name="segment7" parent="Shape Collisions/Triangle/Segments" instance=ExtResource("3_7b2ar")]
+[node name="segment7" parent="Shape Collisions/Triangle/tri_segments" instance=ExtResource("3_7b2ar")]
 position = Vector2(19, -9)
 rotation = 1.59855
 
-[node name="segment8" parent="Shape Collisions/Triangle/Segments" instance=ExtResource("3_7b2ar")]
+[node name="segment8" parent="Shape Collisions/Triangle/tri_segments" instance=ExtResource("3_7b2ar")]
 position = Vector2(31, -10)
 rotation = 1.49704
 
-[node name="segment2" parent="Shape Collisions/Triangle/Segments" instance=ExtResource("3_7b2ar")]
+[node name="segment2" parent="Shape Collisions/Triangle/tri_segments" instance=ExtResource("3_7b2ar")]
 position = Vector2(-28, -22)
 rotation = 0.482709
 
-[node name="segment9" parent="Shape Collisions/Triangle/Segments" instance=ExtResource("3_7b2ar")]
+[node name="segment9" parent="Shape Collisions/Triangle/tri_segments" instance=ExtResource("3_7b2ar")]
 position = Vector2(-22, -34)
 rotation = 0.601413
 
-[node name="segment10" parent="Shape Collisions/Triangle/Segments" instance=ExtResource("3_7b2ar")]
+[node name="segment10" parent="Shape Collisions/Triangle/tri_segments" instance=ExtResource("3_7b2ar")]
 position = Vector2(-14, -45)
 rotation = 0.590169
 
-[node name="segment11" parent="Shape Collisions/Triangle/Segments" instance=ExtResource("3_7b2ar")]
+[node name="segment11" parent="Shape Collisions/Triangle/tri_segments" instance=ExtResource("3_7b2ar")]
 position = Vector2(-7, -56)
 rotation = 0.590169
 
-[node name="segment13" parent="Shape Collisions/Triangle/Segments" instance=ExtResource("3_7b2ar")]
+[node name="segment13" parent="Shape Collisions/Triangle/tri_segments" instance=ExtResource("3_7b2ar")]
 position = Vector2(10, -65)
 rotation = -0.640759
 
-[node name="segment12" parent="Shape Collisions/Triangle/Segments" instance=ExtResource("3_7b2ar")]
+[node name="segment12" parent="Shape Collisions/Triangle/tri_segments" instance=ExtResource("3_7b2ar")]
 position = Vector2(-2, -64)
 rotation = 0.590169
 
-[node name="segment14" parent="Shape Collisions/Triangle/Segments" instance=ExtResource("3_7b2ar")]
+[node name="segment14" parent="Shape Collisions/Triangle/tri_segments" instance=ExtResource("3_7b2ar")]
 position = Vector2(15, -56)
 rotation = -0.588089
 
-[node name="segment15" parent="Shape Collisions/Triangle/Segments" instance=ExtResource("3_7b2ar")]
+[node name="segment15" parent="Shape Collisions/Triangle/tri_segments" instance=ExtResource("3_7b2ar")]
 position = Vector2(20, -47)
 rotation = -0.508355
 
-[node name="segment16" parent="Shape Collisions/Triangle/Segments" instance=ExtResource("3_7b2ar")]
+[node name="segment16" parent="Shape Collisions/Triangle/tri_segments" instance=ExtResource("3_7b2ar")]
 position = Vector2(26, -37)
 rotation = -0.554652
 
-[node name="segment17" parent="Shape Collisions/Triangle/Segments" instance=ExtResource("3_7b2ar")]
+[node name="segment17" parent="Shape Collisions/Triangle/tri_segments" instance=ExtResource("3_7b2ar")]
 position = Vector2(32, -28)
 rotation = -0.53654
 
-[node name="segment18" parent="Shape Collisions/Triangle/Segments" instance=ExtResource("3_7b2ar")]
+[node name="segment18" parent="Shape Collisions/Triangle/tri_segments" instance=ExtResource("3_7b2ar")]
 position = Vector2(38, -18)
 rotation = -0.568733
 
-[node name="segment19" parent="Shape Collisions/Triangle/Segments" instance=ExtResource("3_7b2ar")]
+[node name="segment19" parent="Shape Collisions/Triangle/tri_segments" instance=ExtResource("3_7b2ar")]
 position = Vector2(45, -9)
 rotation = -0.640759
 
 [node name="Square" type="Area2D" parent="Shape Collisions"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shape Collisions/Square"]
-visible = false
 polygon = PackedVector2Array(-23, -60, -23, -8, 29, -8, 29, -60)
+
+[node name="sqr_segments" type="Node2D" parent="Shape Collisions/Square"]
+
+[node name="segment" parent="Shape Collisions/Square/sqr_segments" instance=ExtResource("3_7b2ar")]
+position = Vector2(-26, -4)
+
+[node name="segment2" parent="Shape Collisions/Square/sqr_segments" instance=ExtResource("3_7b2ar")]
+position = Vector2(-26, -18)
+
+[node name="segment3" parent="Shape Collisions/Square/sqr_segments" instance=ExtResource("3_7b2ar")]
+position = Vector2(-26, -32)
+
+[node name="segment4" parent="Shape Collisions/Square/sqr_segments" instance=ExtResource("3_7b2ar")]
+position = Vector2(-26, -46)
+
+[node name="segment5" parent="Shape Collisions/Square/sqr_segments" instance=ExtResource("3_7b2ar")]
+position = Vector2(-28, -63)
+rotation = 1.5708
+
+[node name="segment6" parent="Shape Collisions/Square/sqr_segments" instance=ExtResource("3_7b2ar")]
+position = Vector2(-17, -63)
+rotation = 1.5708
+
+[node name="segment7" parent="Shape Collisions/Square/sqr_segments" instance=ExtResource("3_7b2ar")]
+position = Vector2(-4, -63)
+rotation = 1.5708
+
+[node name="segment8" parent="Shape Collisions/Square/sqr_segments" instance=ExtResource("3_7b2ar")]
+position = Vector2(10, -63)
+rotation = 1.5708
+
+[node name="segment9" parent="Shape Collisions/Square/sqr_segments" instance=ExtResource("3_7b2ar")]
+position = Vector2(19, -63)
+rotation = 1.5708
+
+[node name="segment10" parent="Shape Collisions/Square/sqr_segments" instance=ExtResource("3_7b2ar")]
+position = Vector2(32, -46)
+
+[node name="segment11" parent="Shape Collisions/Square/sqr_segments" instance=ExtResource("3_7b2ar")]
+position = Vector2(32, -33)
+
+[node name="segment12" parent="Shape Collisions/Square/sqr_segments" instance=ExtResource("3_7b2ar")]
+position = Vector2(32, -20)
+
+[node name="segment13" parent="Shape Collisions/Square/sqr_segments" instance=ExtResource("3_7b2ar")]
+position = Vector2(32, -8)
+
+[node name="segment14" parent="Shape Collisions/Square/sqr_segments" instance=ExtResource("3_7b2ar")]
+position = Vector2(19, -5)
+rotation = 1.5708
+
+[node name="segment15" parent="Shape Collisions/Square/sqr_segments" instance=ExtResource("3_7b2ar")]
+position = Vector2(6, -5)
+rotation = 1.5708
+
+[node name="segment16" parent="Shape Collisions/Square/sqr_segments" instance=ExtResource("3_7b2ar")]
+position = Vector2(-8, -5)
+rotation = 1.5708
+
+[node name="segment17" parent="Shape Collisions/Square/sqr_segments" instance=ExtResource("3_7b2ar")]
+position = Vector2(-22, -5)
+rotation = 1.5708
 
 [node name="Circle" type="Area2D" parent="Shape Collisions"]
 

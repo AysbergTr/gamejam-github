@@ -24,5 +24,6 @@ stream = ExtResource("5_iywne")
 position = Vector2(-110, 0)
 
 [node name="Biscuit" parent="." instance=ExtResource("8_gee14")]
+unique_name_in_owner = true
 position = Vector2(-3, 31)
-CookieName = 0
+CookieName = 1
