@@ -82,6 +82,7 @@ func spawn_particle():
 func _input(event):
 	if event.is_action_pressed("click"):
 		#print("Mouse Click/Unclick at: ", event.position)
+		clicking_sound.pitch_scale = randi_range(0.9, 1.1)
 		clicking_sound.play()
 		spawn_particle()
 		apply_shake()
