@@ -29,25 +29,36 @@ var CookieShape := [TRIANGLE_BISCUIT, SQUARE_BISCUIT, CIRCLE_BISCUIT,
 				   UMBREALLA_BISCUIT, MOON_BISCUIT, THUNDER_BISCUIT]
 
 #Cracking variables
-@onready var segments: Node2D = $"Shape Collisions/Triangle/Segments"
 var clicked_segments := 0
+@onready var tri_segments: Node2D = $"Shape Collisions/Triangle/tri_segments"
 
+
+#particle signals
+signal on_cookie
+signal off_cookie
+
+#game won/lose signals
+signal biscuitCleared #won
+signal biscuitLost #lost
 
 
 func _ready() -> void:
 	print(CookieName)
 	sprite_2d.texture = CookieShape[CookieName]
-	for child in segments.get_children():
+	for child in tri_segments.get_children():
 		child.connect("clicked", _on_segment_clicked)
 
 #Checks when a segment clicked
 func _on_segment_clicked() -> void:
 	clicked_segments += 1
-	if clicked_segments == segments.get_children().size():
-		print("hepsi oldu")
-	
+	if clicked_segments == tri_segments.get_children().size():
+		print("All segments cleared")
+		emit_signal("biscuitCleared")
+
+
 func GameOver() -> void:
 	print("Game over")
+	emit_signal("biscuitLost")
 
 
 
@@ -55,29 +66,17 @@ func GameOver() -> void:
 func _on_mouse_entered() -> void:
 	Input.set_custom_mouse_cursor(NEEDLE, Input.CURSOR_ARROW, Vector2(24, 36))
 	clicking_sound.stream = COOKIE
+	emit_signal("on_cookie")
+	
 func _on_mouse_exited() -> void:
 	Input.set_custom_mouse_cursor(USUAL_CURSOR, Input.CURSOR_ARROW, Vector2(8, 8)) 
 	clicking_sound.stream = CLICKING_SOUND
+	emit_signal("off_cookie")
 
 #clicking
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed("click"):
 		pass
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

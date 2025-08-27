@@ -1,7 +1,10 @@
-[gd_scene format=3 uid="uid://diwyd47lxsviy"]
+[gd_scene load_steps=2 format=3 uid="uid://diwyd47lxsviy"]
+
+[ext_resource type="Texture2D" uid="uid://3rbqmd81imx4" path="res://assets/particle_cookie (1).png" id="1_41j6c"]
 
 [node name="CPUParticles2D" type="CPUParticles2D"]
 emitting = false
+texture = ExtResource("1_41j6c")
 lifetime = 0.2
 one_shot = true
 speed_scale = 0.5
@@ -13,6 +16,4 @@ initial_velocity_max = 100.0
 angular_velocity_max = 559.05
 radial_accel_min = -100.0
 radial_accel_max = -100.0
-scale_amount_min = 0.5
-scale_amount_max = 2.0
-color = Color(0, 0, 0, 1)
+scale_amount_max = 1.5
