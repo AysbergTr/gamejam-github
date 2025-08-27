@@ -28,10 +28,23 @@ var CookieShape := [TRIANGLE_BISCUIT, SQUARE_BISCUIT, CIRCLE_BISCUIT,
 				   STAR_BISCUIT, HEART_BISCUIT, PENTAGON_BISCUIT,
 				   UMBREALLA_BISCUIT, MOON_BISCUIT, THUNDER_BISCUIT]
 
+#All Segments
+@onready var tri_segments: Node2D = $"Shape Collisions/Triangle/tri_segments"
+@onready var sqr_segments: Node2D = $"Shape Collisions/Square/sqr_segments"
+@onready var crc_segments: Node2D = $"Shape Collisions/Circle/crc_segments"
+@onready var str_segments: Node2D = $"Shape Collisions/Star/str_segments"
+@onready var hrt_segments: Node2D = $"Shape Collisions/Heart/hrt_segments"
+@onready var pnt_segments: Node2D = $"Shape Collisions/Pentagon/pnt_segments"
+@onready var umb_segments: Node2D = $"Shape Collisions/Umbrella/umb_segments"
+@onready var mon_segments: Node2D = $"Shape Collisions/Moon/mon_segments"
+@onready var thn_segments: Node2D = $"Shape Collisions/Thunder/thn_segments"
+
+
+var segments
+
+
 #Cracking variables
 var clicked_segments := 0
-@onready var tri_segments: Node2D = $"Shape Collisions/Triangle/tri_segments"
-
 
 #particle signals
 signal on_cookie
@@ -43,18 +56,25 @@ signal biscuitLost #lost
 
 
 func _ready() -> void:
-	print(CookieName)
+	#segment lists
+	var segments_list = [tri_segments, sqr_segments, crc_segments, 
+						 str_segments, hrt_segments, pnt_segments,
+						 umb_segments, mon_segments, thn_segments]
+	#choosing the segment for different cookies and making it visible so player can touch it
+	segments = segments_list[CookieName]
+	segments.visible = true
+	
+	#print(segments.get_children())
 	sprite_2d.texture = CookieShape[CookieName]
-	for child in tri_segments.get_children():
+	for child in segments.get_children():
 		child.connect("clicked", _on_segment_clicked)
 
 #Checks when a segment clicked
 func _on_segment_clicked() -> void:
 	clicked_segments += 1
-	if clicked_segments == tri_segments.get_children().size():
+	if clicked_segments == segments.get_children().size():
 		print("All segments cleared")
 		emit_signal("biscuitCleared")
-
 
 func GameOver() -> void:
 	print("Game over")
