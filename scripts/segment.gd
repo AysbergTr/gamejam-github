@@ -1,6 +1,7 @@
 extends Area2D
 
-@onready var body: Polygon2D = $Polygon2D
+@onready var _body: Polygon2D = $Polygon2D
+@onready var _collision: CollisionPolygon2D = $CollisionPolygon2D
 
 
 #clicked signals
@@ -23,5 +24,6 @@ func _process(delta: float) -> void:
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed("click"):
-		body.visible=true
+		_body.visible=true
 		emit_signal("clicked")
+		_collision.disabled = true

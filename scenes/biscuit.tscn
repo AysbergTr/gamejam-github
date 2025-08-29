@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://g42yt0gbrh85"]
+[gd_scene load_steps=7 format=3 uid="uid://g42yt0gbrh85"]
 
 [ext_resource type="Script" uid="uid://v2o6f70pegce" path="res://scripts/Biscuit.gd" id="1_ug7ah"]
-[ext_resource type="Texture2D" uid="uid://cwyrvb5muj1bp" path="res://assets/Cookie Shapes/ThunderBiscuit.png" id="2_7b2ar"]
+[ext_resource type="Texture2D" uid="uid://drj4a4r53yw2n" path="res://assets/Cookie Shapes/PentagonBiscuit.png" id="2_27tx6"]
 [ext_resource type="PackedScene" uid="uid://cmiwaubc7j8nx" path="res://scenes/segment.tscn" id="3_7b2ar"]
+[ext_resource type="Texture2D" uid="uid://dnnno25bex8ao" path="res://assets/base_cracked_biscuit.png" id="4_27tx6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f5day"]
 radius = 32.0
@@ -21,7 +22,7 @@ shape = SubResource("CircleShape2D_f5day")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, -32)
 scale = Vector2(2, 2)
-texture = ExtResource("2_7b2ar")
+texture = ExtResource("2_27tx6")
 
 [node name="Shape Collisions" type="Node2D" parent="."]
 
@@ -823,6 +824,17 @@ rotation = 3.87292
 [node name="segment21" parent="Shape Collisions/Thunder/thn_segments" instance=ExtResource("3_7b2ar")]
 position = Vector2(-3, -2)
 rotation = 3.87292
+
+[node name="BaseCrackedBiscuit" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(1, -32)
+scale = Vector2(2, 2)
+texture = ExtResource("4_27tx6")
+
+[node name="Cookie_symbol" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1, -32)
+scale = Vector2(2, 2)
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
