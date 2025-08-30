@@ -20,7 +20,7 @@ func _ready() -> void:
 	#biscuit.connect("biscuitCleared", checkIndex(Biscuit_Name))
 	
 func checkIndex(shape):
-	print(index)
+	#print(index)
 	if index == shape:
 		body.modulate.g = 1
 		body.modulate.b = 1

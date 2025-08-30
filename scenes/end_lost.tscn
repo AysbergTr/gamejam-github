@@ -1,0 +1,238 @@
+[gd_scene load_steps=13 format=3 uid="uid://c32b0am5ndwfx"]
+
+[ext_resource type="Script" uid="uid://lcie51d5et3t" path="res://scripts/main_menu.gd" id="1_tqqaq"]
+[ext_resource type="PackedScene" uid="uid://bagy2d7yjtvmv" path="res://scenes/floating_symbols.tscn" id="2_oqyu1"]
+[ext_resource type="FontFile" uid="uid://kxshfrilu1ou" path="res://fonts/PixelOperator8.ttf" id="3_bea5q"]
+[ext_resource type="FontFile" uid="uid://cveqkmv7qgt3b" path="res://fonts/PixelOperator8-Bold.ttf" id="4_5cgra"]
+[ext_resource type="AudioStream" uid="uid://c4oso5et5o36q" path="res://sfx/Oppressive Gloom.mp3" id="5_vhuq6"]
+[ext_resource type="AudioStream" uid="uid://cjddc7ckfa4xc" path="res://sfx/clicking_sound.wav" id="6_y6r1n"]
+[ext_resource type="PackedScene" uid="uid://hnewpyu7723f" path="res://scenes/Fade_anim.tscn" id="7_35vn0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6cm7"]
+bg_color = Color(0.741176, 0.0627451, 0.317647, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekxnf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
+bg_color = Color(0.779291, 0.779291, 0.779291, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
+bg_color = Color(1.63645e-06, 0.53461, 0.538672, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vue75"]
+bg_color = Color(0.963782, 0.866012, 0.611656, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 5)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_tqqaq")
+
+[node name="background_color" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -678.0
+offset_top = -387.0
+offset_right = 754.0
+offset_bottom = 387.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_l6cm7")
+
+[node name="floating_symbols_list" type="Node2D" parent="."]
+
+[node name="floating_symbols" parent="floating_symbols_list" instance=ExtResource("2_oqyu1")]
+position = Vector2(-421, -115)
+
+[node name="floating_symbols2" parent="floating_symbols_list" instance=ExtResource("2_oqyu1")]
+position = Vector2(-421, -115)
+
+[node name="floating_symbols3" parent="floating_symbols_list" instance=ExtResource("2_oqyu1")]
+position = Vector2(-421, -115)
+
+[node name="floating_symbols4" parent="floating_symbols_list" instance=ExtResource("2_oqyu1")]
+position = Vector2(-421, -115)
+
+[node name="floating_symbols5" parent="floating_symbols_list" instance=ExtResource("2_oqyu1")]
+position = Vector2(-421, -115)
+
+[node name="floating_symbols6" parent="floating_symbols_list" instance=ExtResource("2_oqyu1")]
+position = Vector2(-421, -115)
+
+[node name="floating_symbols7" parent="floating_symbols_list" instance=ExtResource("2_oqyu1")]
+position = Vector2(-421, -115)
+
+[node name="floating_symbols8" parent="floating_symbols_list" instance=ExtResource("2_oqyu1")]
+position = Vector2(-421, -115)
+
+[node name="floating_symbols9" parent="floating_symbols_list" instance=ExtResource("2_oqyu1")]
+position = Vector2(-421, -115)
+
+[node name="floating_symbols10" parent="floating_symbols_list" instance=ExtResource("2_oqyu1")]
+position = Vector2(-421, -115)
+
+[node name="floating_symbols11" parent="floating_symbols_list" instance=ExtResource("2_oqyu1")]
+position = Vector2(-421, -115)
+
+[node name="floating_symbols12" parent="floating_symbols_list" instance=ExtResource("2_oqyu1")]
+position = Vector2(-421, -115)
+
+[node name="floating_symbols13" parent="floating_symbols_list" instance=ExtResource("2_oqyu1")]
+position = Vector2(-421, -115)
+
+[node name="floating_symbols14" parent="floating_symbols_list" instance=ExtResource("2_oqyu1")]
+position = Vector2(-421, -115)
+
+[node name="floating_symbols15" parent="floating_symbols_list" instance=ExtResource("2_oqyu1")]
+position = Vector2(-421, -115)
+
+[node name="floating_symbols16" parent="floating_symbols_list" instance=ExtResource("2_oqyu1")]
+position = Vector2(-421, -115)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 315.0
+offset_top = 212.0
+offset_right = 618.0
+offset_bottom = 339.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_bea5q")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ekxnf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vue75")
+text = "TRY AGAIN"
+
+[node name="options" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_bea5q")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ekxnf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vue75")
+text = "OPTIONS"
+
+[node name="exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_bea5q")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ekxnf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vue75")
+text = "EXIT"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -431.0
+offset_top = -208.0
+offset_right = 439.0
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -7
+theme_override_constants/shadow_offset_y = 7
+theme_override_fonts/font = ExtResource("4_5cgra")
+theme_override_font_sizes/font_size = 48
+text = "Unfortunately you have to leave :(
+
+Just didn't have what it takes to win
+
+Maybe next time eh?"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="main_menu_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_vhuq6")
+volume_db = -15.0
+autoplay = true
+parameters/looping = true
+
+[node name="Button_click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_y6r1n")
+
+[node name="Fade_transition" parent="." instance=ExtResource("7_35vn0")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -697.0
+offset_top = -406.0
+offset_right = 664.0
+offset_bottom = 406.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Fade_timer" type="Timer" parent="Fade_transition"]
+
+[connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_exit_pressed"]
+[connection signal="timeout" from="Fade_transition/Fade_timer" to="." method="_on_fade_timer_timeout"]
