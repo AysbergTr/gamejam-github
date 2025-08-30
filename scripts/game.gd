@@ -26,6 +26,14 @@ const PARTICLE_COOKIE = preload("res://assets/particle_cookie (1).png")
 
 
 func _ready() -> void:
+	#fade out animation
+	$Fade_transition.color.a = 255
+	$Fade_transition.show()
+	$Fade_transition/Fade_timer.start()
+	$Fade_transition/AnimationPlayer.play("FadeOut")
+
+	#$Fade_transition.hide()
+	
 	rand.randomize()
 	#apply_button.connect("pressed", self, "apply_shake")
 	biscuit.connect("on_cookie", entered_cookie)
@@ -86,3 +94,7 @@ func _input(event):
 		clicking_sound.play()
 		spawn_particle()
 		apply_shake()
+
+
+func _on_fade_timer_timeout() -> void:
+	$Fade_transition.hide()

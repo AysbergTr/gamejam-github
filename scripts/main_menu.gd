@@ -1,5 +1,8 @@
 extends Control
 
+var button_type = null
+
+@onready var button_click_sfx: AudioStreamPlayer2D = $Button_click
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,14 +15,27 @@ func _process(delta: float) -> void:
 
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
-
-
+	button_type = "start"
+	$Fade_transition.show()
+	$Fade_transition/Fade_timer.start()
+	$Fade_transition/AnimationPlayer.play("FadeIn")
+	button_click_sfx.play()
+	
 func _on_options_pressed() -> void:
 	print("options")
 
 func _on_exit_pressed() -> void:
-	get_tree().quit()
-	
-	
-	
+	button_type = "exit"
+	button_click_sfx.play()
+	$Fade_transition.show()
+	$Fade_transition/Fade_timer.start()
+	$Fade_transition/AnimationPlayer.play("FadeIn")
+
+
+
+func _on_fade_timer_timeout() -> void:
+	if button_type == "start":
+		get_tree().change_scene_to_file("res://scenes/game.tscn")
+		
+	elif button_type == "exit":
+		get_tree().quit()

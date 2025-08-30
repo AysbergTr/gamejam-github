@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://7mqlexcnwkvy"]
+[gd_scene load_steps=6 format=3 uid="uid://7mqlexcnwkvy"]
 
 [ext_resource type="Script" uid="uid://b03ke3pjmjvfd" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="AudioStream" uid="uid://cjddc7ckfa4xc" path="res://sfx/clicking_sound.wav" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://hnewpyu7723f" path="res://scenes/Fade_anim.tscn" id="5_p57ef"]
 [ext_resource type="PackedScene" uid="uid://i28mfgee7hxj" path="res://scenes/door.tscn" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://g42yt0gbrh85" path="res://scenes/biscuit.tscn" id="8_gee14"]
 
@@ -28,3 +29,14 @@ position = Vector2(-110, 0)
 unique_name_in_owner = true
 position = Vector2(-3, 31)
 CookieName = 0
+
+[node name="Fade_transition" parent="." instance=ExtResource("5_p57ef")]
+visible = false
+offset_left = -663.0
+offset_top = -312.0
+offset_right = 628.0
+offset_bottom = 442.0
+
+[node name="Fade_timer" type="Timer" parent="Fade_transition"]
+
+[connection signal="timeout" from="Fade_transition/Fade_timer" to="." method="_on_fade_timer_timeout"]
