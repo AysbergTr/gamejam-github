@@ -33,7 +33,8 @@ func goDown() -> void:
 	tween.tween_property(body, "rotation", (body.rotation+10), 5)
 
 func _process(delta: float) -> void:
-	if body.global_position[1] == 709:
+	#print(body.global_position[1])
+	if body.global_position[1] >= 745:
 		body.texture = CookieSymbolShape[randf_range(0,9)]
 		body.global_position = Vector2(randf_range(0, 1000), randf_range(-20, -50))
 		goDown()

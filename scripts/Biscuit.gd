@@ -189,7 +189,7 @@ func GameWon() -> void:
 	
 	#camera going back
 	tween.set_parallel(false)
-	tween.tween_property(camera, "position", Vector2(0,0), 2)
+	tween.tween_property(camera, "position", Vector2(0,0), 3)
 
 func GameOver() -> void:
 	_crack += 1

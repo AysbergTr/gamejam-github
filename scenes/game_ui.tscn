@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dha8jj1xr1bx6"]
+[gd_scene load_steps=17 format=3 uid="uid://dha8jj1xr1bx6"]
 
 [ext_resource type="Script" uid="uid://dwaiisn0tj1eo" path="res://scenes/game_ui.gd" id="1_5kh4o"]
 [ext_resource type="FontFile" uid="uid://kxshfrilu1ou" path="res://fonts/PixelOperator8.ttf" id="1_yubou"]
@@ -41,12 +41,32 @@ corner_radius_bottom_left = 16
 shadow_size = 5
 shadow_offset = Vector2(0, 5)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5kh4o"]
+bg_color = Color(0.713726, 0.764706, 0.94902, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.776471, 0.0666667, 0.333333, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+
 [node name="game_UI" type="Node2D"]
 script = ExtResource("1_5kh4o")
 
 [node name="background" type="Polygon2D" parent="."]
-color = Color(0, 0.179944, 0.405084, 1)
-polygon = PackedVector2Array(0, 500, 1150, 500, 1150, 650, 0, 650)
+position = Vector2(0, 89)
+scale = Vector2(1.11304, 0.969231)
+color = Color(0.717647, 0.764706, 0.952941, 1)
+polygon = PackedVector2Array(0, 520, 1150, 520, 1150, 650, 0, 650)
+
+[node name="background2" type="Polygon2D" parent="."]
+position = Vector2(130, 0)
+color = Color(0.717647, 0.764706, 0.952941, 1)
+polygon = PackedVector2Array(1150, 0, 1150, 650, 950, 650, 950, 0)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -57,10 +77,10 @@ offset_bottom = 40.0
 [node name="VBoxContainer2" type="VBoxContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.985417
-anchor_top = 0.801852
-anchor_right = 2.46458
-anchor_bottom = 1.85185
+anchor_left = 2.76458
+anchor_top = 2.77685
+anchor_right = 5.5395
+anchor_bottom = 3.82685
 offset_left = 970.417
 offset_top = 488.926
 offset_right = 1045.42
@@ -100,6 +120,41 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_u001w")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_u2dgd")
 theme_override_styles/normal = SubResource("StyleBoxFlat_bt76a")
 text = "EXIT"
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 1083.0
+offset_top = 81.0
+offset_right = 1279.0
+offset_bottom = 466.0
+theme_override_colors/font_color = Color(0.776471, 0.0666667, 0.333333, 1)
+theme_override_colors/font_shadow_color = Color(0.866667, 0.458824, 0.588235, 1)
+theme_override_constants/shadow_offset_x = -1
+theme_override_fonts/font = ExtResource("1_yubou")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_5kh4o")
+text = "      RULES
+
+1- Only 2 chances per biscuit is given before cracking down
+
+2- Click at the lines
+
+3- Carve all shapes before timer runs out"
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="Control/Label"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 366.0
+offset_right = 178.0
+offset_bottom = 422.0
+theme_override_colors/font_color = Color(0.776471, 0.0666667, 0.333333, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -1
+theme_override_fonts/font = ExtResource("1_yubou")
+theme_override_font_sizes/font_size = 8
+text = "tip: don't click inside"
+autowrap_mode = 2
 
 [node name="symbol_list" type="Node2D" parent="."]
 visible = false

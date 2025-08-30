@@ -7,6 +7,8 @@ extends Area2D
 
 signal cookie_selected
 
+@onready var sfx: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 # Called when the node enters the scene tree for the first time.
@@ -34,3 +36,4 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		emit_signal("cookie_selected", cookie_index)
 		collision_shape_2d.disabled = true
 		door_shut_sprite.show()
+		sfx.play()

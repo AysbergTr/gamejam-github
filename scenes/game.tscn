@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://7mqlexcnwkvy"]
+[gd_scene load_steps=18 format=3 uid="uid://7mqlexcnwkvy"]
 
 [ext_resource type="Script" uid="uid://b03ke3pjmjvfd" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="AudioStream" uid="uid://cjddc7ckfa4xc" path="res://sfx/clicking_sound.wav" id="5_iywne"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://g8yndpftok87" path="res://assets/symbols of ccokies/symbol_umbrella.png" id="13_37s47"]
 [ext_resource type="Texture2D" uid="uid://psc0yxyw8lt7" path="res://assets/symbols of ccokies/symbol_moon.png" id="14_bt5mj"]
 [ext_resource type="Texture2D" uid="uid://cg4e1v5wvtboj" path="res://assets/symbols of ccokies/symbol_thunder.png" id="15_e1j6l"]
+[ext_resource type="PackedScene" uid="uid://b3cphoajcqir1" path="res://scenes/timer.tscn" id="17_rysoc"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_iywne")
@@ -23,7 +24,7 @@ RANDOM_SHAKE_STRENGTH = 1.0
 
 [node name="background_color" type="Polygon2D" parent="."]
 position = Vector2(-249, -128)
-color = Color(0.0745098, 0.137255, 0.533333, 1)
+color = Color(0.203922, 0.384314, 0.247059, 1)
 polygon = PackedVector2Array(-33, -176, 0, 250, 500, 250, 543, -65)
 
 [node name="background_color2" type="Polygon2D" parent="."]
@@ -37,6 +38,7 @@ stream = ExtResource("5_iywne")
 pitch_scale = 0.9
 
 [node name="Door_list" type="Node2D" parent="."]
+position = Vector2(20, 0)
 
 [node name="Door" parent="Door_list" instance=ExtResource("6_p57ef")]
 position = Vector2(-151, -30)
@@ -58,30 +60,36 @@ position = Vector2(54, -30)
 cookie_index = 4
 
 [node name="Door6" parent="Door_list" instance=ExtResource("6_p57ef")]
-position = Vector2(-1, 37)
+position = Vector2(27, 37)
 cookie_index = 8
 
 [node name="Door7" parent="Door_list" instance=ExtResource("6_p57ef")]
-position = Vector2(-48, 37)
+position = Vector2(-20, 37)
 cookie_index = 7
 
 [node name="Door8" parent="Door_list" instance=ExtResource("6_p57ef")]
-position = Vector2(-102, 37)
+position = Vector2(-74, 37)
 cookie_index = 6
 
 [node name="Door9" parent="Door_list" instance=ExtResource("6_p57ef")]
-position = Vector2(-151, 37)
+position = Vector2(-123, 37)
 cookie_index = 5
+
+[node name="Biscuit" parent="." instance=ExtResource("8_gee14")]
+unique_name_in_owner = true
+position = Vector2(-23, -244)
+CookieName = 7
 
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true
 zoom = Vector2(3, 3)
 
 [node name="GameUI" parent="Camera2D" instance=ExtResource("6_u5sy4")]
-position = Vector2(-192, -108)
+position = Vector2(-215, -121)
 scale = Vector2(0.335, 0.335)
 
 [node name="symbol_list" type="Node2D" parent="Camera2D"]
+position = Vector2(0, 13)
 
 [node name="badge" parent="Camera2D/symbol_list" instance=ExtResource("6_gee14")]
 position = Vector2(-170, 98)
@@ -127,10 +135,11 @@ position = Vector2(94, 96)
 image = ExtResource("15_e1j6l")
 index = 8
 
-[node name="Biscuit" parent="." instance=ExtResource("8_gee14")]
-unique_name_in_owner = true
-position = Vector2(10, -244)
-CookieName = 7
+[node name="Timer" parent="Camera2D" instance=ExtResource("17_rysoc")]
+offset_left = 180.0
+offset_top = -105.0
+offset_right = 180.0
+offset_bottom = -105.0
 
 [node name="Fade_transition" parent="." instance=ExtResource("5_p57ef")]
 unique_name_in_owner = true
