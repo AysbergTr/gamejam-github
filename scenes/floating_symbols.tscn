@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bagy2d7yjtvmv"]
+
+[ext_resource type="Script" uid="uid://dfj6v8t4i6j3k" path="res://scripts/floating_symbols.gd" id="1_nj15f"]
+
+[node name="floating_symbols" type="Node2D"]
+script = ExtResource("1_nj15f")
+
+[node name="body" type="Sprite2D" parent="."]
+scale = Vector2(1.2, 1.2)
