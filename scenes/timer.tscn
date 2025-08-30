@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3cphoajcqir1"]
+[gd_scene load_steps=5 format=3 uid="uid://b3cphoajcqir1"]
 
 [ext_resource type="Script" uid="uid://bycv1ikpxkh33" path="res://scripts/timer.gd" id="1_5lxq6"]
 [ext_resource type="FontFile" uid="uid://kxshfrilu1ou" path="res://fonts/PixelOperator8.ttf" id="1_srplv"]
 [ext_resource type="AudioStream" uid="uid://ufjcfp85nwra" path="res://sfx/clock ticking sound effect.mp3" id="3_g5y8c"]
+[ext_resource type="AudioStream" uid="uid://dglfke1fcprpl" path="res://sfx/Rafael_Archangel_-_07_-_Calm_Down(chosic.com).mp3" id="4_bi5oq"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -29,10 +30,15 @@ vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="clock sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_g5y8c")
 volume_db = -5.0
 autoplay = true
 parameters/looping = true
+
+[node name="GameBackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_bi5oq")
+volume_db = -15.0
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
