@@ -46,3 +46,12 @@ func _on_fade_timer_timeout() -> void:
 	
 	else:
 		$Fade_transition.hide()
+
+
+func _on_back_pressed() -> void:
+	$CreditsScreen.hide()
+	button_click_sfx.play()
+
+func _on_credits_pressed() -> void:
+	$CreditsScreen.show()
+	button_click_sfx.play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bh6msnf1nrep0"]
+[gd_scene load_steps=14 format=3 uid="uid://c1nibajbliejv"]
 
 [ext_resource type="Script" uid="uid://lcie51d5et3t" path="res://scripts/main_menu.gd" id="1_vgdyc"]
 [ext_resource type="PackedScene" uid="uid://bagy2d7yjtvmv" path="res://scenes/floating_symbols.tscn" id="2_uj2gi"]
@@ -7,18 +7,9 @@
 [ext_resource type="AudioStream" uid="uid://c4oso5et5o36q" path="res://sfx/Oppressive Gloom.mp3" id="5_k1kgf"]
 [ext_resource type="AudioStream" uid="uid://cjddc7ckfa4xc" path="res://sfx/clicking_sound.wav" id="6_xejpm"]
 [ext_resource type="PackedScene" uid="uid://hnewpyu7723f" path="res://scenes/Fade_anim.tscn" id="7_b2h4l"]
-[ext_resource type="Texture2D" uid="uid://duuctmmb2t550" path="res://assets/symbols of ccokies/symbol_circle.png" id="8_1ochd"]
-[ext_resource type="Texture2D" uid="uid://ctsambqvlkrfr" path="res://assets/symbols of ccokies/symbol_heart.png" id="9_cy1oi"]
-[ext_resource type="Texture2D" uid="uid://psc0yxyw8lt7" path="res://assets/symbols of ccokies/symbol_moon.png" id="10_oo6tg"]
-[ext_resource type="Texture2D" uid="uid://cbytmfalgihiq" path="res://assets/symbols of ccokies/symbol_pentagon.png" id="11_l6cbk"]
-[ext_resource type="Texture2D" uid="uid://co6vstfw7p5w7" path="res://assets/symbols of ccokies/symbol_square.png" id="12_k4i60"]
-[ext_resource type="Texture2D" uid="uid://ch8aq5go37kru" path="res://assets/symbols of ccokies/symbol_star.png" id="13_lavdj"]
-[ext_resource type="Texture2D" uid="uid://cg4e1v5wvtboj" path="res://assets/symbols of ccokies/symbol_thunder.png" id="14_wh4yf"]
-[ext_resource type="Texture2D" uid="uid://c8ia4geruyyns" path="res://assets/symbols of ccokies/symbol_triangle.png" id="15_2i4eb"]
-[ext_resource type="Texture2D" uid="uid://g8yndpftok87" path="res://assets/symbols of ccokies/symbol_umbrella.png" id="16_ut0js"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6cm7"]
-bg_color = Color(0.0745098, 0.137255, 0.533333, 1)
+bg_color = Color(0.203922, 0.384314, 0.247059, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekxnf"]
 
@@ -49,6 +40,18 @@ corner_radius_bottom_left = 16
 shadow_size = 5
 shadow_offset = Vector2(0, 5)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgdyc"]
+bg_color = Color(0.964706, 0.866667, 0.611765, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 8
@@ -69,10 +72,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -572.0
-offset_top = -344.0
-offset_right = 642.0
-offset_bottom = 430.0
+offset_left = -678.0
+offset_top = -387.0
+offset_right = 754.0
+offset_bottom = 387.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_l6cm7")
@@ -134,17 +137,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -216.0
-offset_top = 204.0
-offset_right = 216.0
-offset_bottom = 301.0
+offset_left = 306.0
+offset_top = 156.0
+offset_right = 619.0
+offset_bottom = 339.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 10
 alignment = 1
 
 [node name="start" type="Button" parent="VBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -157,10 +159,9 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_ekxnf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ekxnf")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
 theme_override_styles/normal = SubResource("StyleBoxFlat_vue75")
-text = "START GAME	"
+text = "DO IT AGAIN"
 
-[node name="options" type="Button" parent="VBoxContainer"]
-visible = false
+[node name="credits" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -173,7 +174,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_ekxnf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ekxnf")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
 theme_override_styles/normal = SubResource("StyleBoxFlat_vue75")
-text = "OPTIONS"
+text = "CREDITS"
 
 [node name="exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -197,10 +198,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -435.0
-offset_top = -263.0
-offset_right = 435.0
-offset_bottom = -183.0
+offset_left = -582.0
+offset_top = -317.0
+offset_right = 638.0
+offset_bottom = 198.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -208,28 +209,53 @@ theme_override_constants/shadow_offset_x = -7
 theme_override_constants/shadow_offset_y = 7
 theme_override_fonts/font = ExtResource("4_tcsbu")
 theme_override_font_sizes/font_size = 48
-text = "You have won the game"
+text = "You Bisc'uit your all and you won. 
+
+There is nothing but respect I can give you.
+
+You're nothing like those people who could'nt finish the game"
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = -1
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -329.0
-offset_top = -128.0
-offset_right = 383.0
-offset_bottom = -28.0
+offset_left = -639.0
+offset_top = 241.0
+offset_right = -151.0
+offset_bottom = 276.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = -7
-theme_override_constants/shadow_offset_y = 7
+theme_override_constants/shadow_offset_x = -3
+theme_override_constants/shadow_offset_y = 3
 theme_override_fonts/font = ExtResource("4_tcsbu")
-theme_override_font_sizes/font_size = 30
-text = "You took a risk and gained these biscuits"
+theme_override_font_sizes/font_size = 16
+text = "Of course its all JOKES, Thank you to everyone who played my game"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -639.0
+offset_top = 293.0
+offset_right = -151.0
+offset_bottom = 328.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("4_tcsbu")
+theme_override_font_sizes/font_size = 16
+text = "Don't forget to rate my game from itch.io"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -242,58 +268,55 @@ parameters/looping = true
 [node name="Button_click" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_xejpm")
 
-[node name="background" type="Polygon2D" parent="."]
-position = Vector2(-185, -529)
-color = Color(0.0745098, 0.137255, 0.533333, 1)
-polygon = PackedVector2Array(0, 500, 400, 500, 400, 650, 0, 650)
+[node name="CreditsScreen" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="symbol_list" type="Node2D" parent="background"]
-position = Vector2(-109, -16)
+[node name="Label" type="Label" parent="CreditsScreen"]
+layout_mode = 0
+offset_left = -528.0
+offset_top = -249.0
+offset_right = 568.0
+offset_bottom = 184.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.47788, 0.47788, 0.47788, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("4_tcsbu")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_vgdyc")
+text = " 
+ SPECIAL THANKS TO:
+ 
+ Ilyas RAHMANOV for helping with idea/planning, 
+ 
+ Other friends who helped me with playtesting,
 
-[node name="SymbolCircle" type="Sprite2D" parent="background/symbol_list"]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(283, 554)
-texture = ExtResource("8_1ochd")
+ My family for being supportive and 
+ being an amazing family,
+ 
+ And of course Brackeys for hosting this Game Jam"
+autowrap_mode = 3
 
-[node name="SymbolHeart" type="Sprite2D" parent="background/symbol_list"]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(414, 552)
-texture = ExtResource("9_cy1oi")
-
-[node name="SymbolMoon" type="Sprite2D" parent="background/symbol_list"]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(243, 613)
-texture = ExtResource("10_oo6tg")
-
-[node name="SymbolPentagon" type="Sprite2D" parent="background/symbol_list"]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(477, 555)
-texture = ExtResource("11_l6cbk")
-
-[node name="SymbolSquare" type="Sprite2D" parent="background/symbol_list"]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(212, 553)
-texture = ExtResource("12_k4i60")
-
-[node name="SymbolStar" type="Sprite2D" parent="background/symbol_list"]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(358, 554)
-texture = ExtResource("13_lavdj")
-
-[node name="SymbolThunder" type="Sprite2D" parent="background/symbol_list"]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(300, 614)
-texture = ExtResource("14_wh4yf")
-
-[node name="SymbolTriangle" type="Sprite2D" parent="background/symbol_list"]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(144, 553)
-texture = ExtResource("15_2i4eb")
-
-[node name="SymbolUmbrella" type="Sprite2D" parent="background/symbol_list"]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(355, 611)
-texture = ExtResource("16_ut0js")
+[node name="back" type="Button" parent="CreditsScreen"]
+offset_left = 263.0
+offset_top = 76.0
+offset_right = 515.0
+offset_bottom = 147.0
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sjius")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ekxnf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vue75")
+text = "BACK"
 
 [node name="Fade_transition" parent="." instance=ExtResource("7_b2h4l")]
 visible = false
@@ -303,9 +326,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = -653.0
+offset_left = -697.0
 offset_top = -406.0
-offset_right = 630.0
+offset_right = 664.0
 offset_bottom = 406.0
 grow_horizontal = 1
 grow_vertical = 1
@@ -313,6 +336,7 @@ grow_vertical = 1
 [node name="Fade_timer" type="Timer" parent="Fade_transition"]
 
 [connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="CreditsScreen/back" to="." method="_on_back_pressed"]
 [connection signal="timeout" from="Fade_transition/Fade_timer" to="." method="_on_fade_timer_timeout"]

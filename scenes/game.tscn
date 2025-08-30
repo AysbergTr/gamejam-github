@@ -25,7 +25,7 @@ RANDOM_SHAKE_STRENGTH = 1.0
 [node name="background_color" type="Polygon2D" parent="."]
 position = Vector2(-249, -128)
 color = Color(0.203922, 0.384314, 0.247059, 1)
-polygon = PackedVector2Array(-33, -176, 0, 250, 500, 250, 543, -65)
+polygon = PackedVector2Array(-33, -176, 0, 250, 500, 250, 478, -99)
 
 [node name="background_color2" type="Polygon2D" parent="."]
 visible = false
@@ -160,6 +160,7 @@ offset_bottom = 442.0
 [connection signal="cookie_selected" from="Door_list/Door7" to="Biscuit" method="_on_door_7_cookie_selected"]
 [connection signal="cookie_selected" from="Door_list/Door8" to="Biscuit" method="_on_door_8_cookie_selected"]
 [connection signal="cookie_selected" from="Door_list/Door9" to="Biscuit" method="_on_door_9_cookie_selected"]
+[connection signal="biscuitCleared" from="Biscuit" to="." method="_on_biscuit_biscuit_cleared"]
 [connection signal="biscuitCleared" from="Biscuit" to="Camera2D/symbol_list/badge" method="_on_biscuit_biscuit_cleared"]
 [connection signal="biscuitCleared" from="Biscuit" to="Camera2D/symbol_list/badge2" method="_on_biscuit_biscuit_cleared"]
 [connection signal="biscuitCleared" from="Biscuit" to="Camera2D/symbol_list/badge3" method="_on_biscuit_biscuit_cleared"]
@@ -169,4 +170,6 @@ offset_bottom = 442.0
 [connection signal="biscuitCleared" from="Biscuit" to="Camera2D/symbol_list/badge7" method="_on_biscuit_biscuit_cleared"]
 [connection signal="biscuitCleared" from="Biscuit" to="Camera2D/symbol_list/badge8" method="_on_biscuit_biscuit_cleared"]
 [connection signal="biscuitCleared" from="Biscuit" to="Camera2D/symbol_list/badge9" method="_on_biscuit_biscuit_cleared"]
+[connection signal="biscuitLost" from="Biscuit" to="." method="_on_biscuit_biscuit_lost"]
+[connection signal="out_of_time" from="Camera2D/Timer" to="." method="_on_timer_out_of_time"]
 [connection signal="timeout" from="Fade_transition/Fade_timer" to="." method="_on_fade_timer_timeout"]

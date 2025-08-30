@@ -22,7 +22,7 @@ var on_cookie = false
 const PARTICLE_COOKIE = preload("res://assets/particle_cookie (1).png")
 
 
-
+var badgeNumber :int = 0
 
 
 func _ready() -> void:
@@ -55,16 +55,6 @@ func get_random_offset() -> Vector2:
 		rand.randf_range(-shake_strength, shake_strength)
 	)
 
-func find_color():
-	var viewport_tex = get_viewport().get_texture()
-	var img = viewport_tex.get_image()
-	var mouse_pos = get_viewport().get_mouse_position()
-	
-	var color = img.get_pixel(mouse_pos.x, mouse_pos.y)
-	#inverse
-	var inverse = Color(1.0 - color.r, 1.0 - color.g, 1.0 - color.b, color.a)
-	return Color(color)
-
 func entered_cookie():
 	on_cookie = true
 	
@@ -85,8 +75,7 @@ func spawn_particle():
 	else:
 		fx.texture = null
 	
-	#fx.color = find_color()
-	
+
 func _input(event):
 	if event.is_action_pressed("click"):
 		#print("Mouse Click/Unclick at: ", event.position)
@@ -98,3 +87,27 @@ func _input(event):
 
 func _on_fade_timer_timeout() -> void:
 	$Fade_transition.hide()
+
+func GameWon() -> void:
+	await get_tree().create_timer(2).timeout
+	get_tree().change_scene_to_file("res://scenes/end_won.tscn")
+
+
+func GameOver() -> void:
+	await get_tree().create_timer(2).timeout
+	get_tree().change_scene_to_file("res://scenes/end_lost.tscn")
+
+func _on_timer_out_of_time() -> void:
+	GameOver()
+
+func _on_biscuit_biscuit_lost() -> void:
+	GameOver()
+
+
+func _on_biscuit_biscuit_cleared(CookieName) -> void:
+	badgeNumber += 1
+	#print("badge Number:", badgeNumber)
+	#print("Cookie Number:", CookieName)
+	
+	if badgeNumber >= 9:
+		GameWon()
