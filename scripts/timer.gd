@@ -17,8 +17,9 @@ func _on_timer_timeout() -> void:
 		$Timer.stop()
 		emit_signal("out_of_time")
 		
-	if time_limit_in_secs < 45:
+	if time_limit_in_secs < 60:
 		$Label.set("theme_override_colors/font_color", Color(1, 0, 0))
+		$GameBackgroundMusic.volume_db = -5
 		
 	var m = int(time_limit_in_secs/60.0)
 	var s = time_limit_in_secs - m * 60
