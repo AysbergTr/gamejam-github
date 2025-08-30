@@ -26,7 +26,7 @@ const PARTICLE_COOKIE = preload("res://assets/particle_cookie (1).png")
 
 
 func _ready() -> void:
-	#fade out animation
+	#fade out an
 	$Fade_transition.color.a = 255
 	$Fade_transition.show()
 	$Fade_transition/Fade_timer.start()

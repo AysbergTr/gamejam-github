@@ -1,0 +1,162 @@
+[gd_scene load_steps=16 format=3 uid="uid://dha8jj1xr1bx6"]
+
+[ext_resource type="Script" uid="uid://dwaiisn0tj1eo" path="res://scenes/game_ui.gd" id="1_5kh4o"]
+[ext_resource type="FontFile" uid="uid://kxshfrilu1ou" path="res://fonts/PixelOperator8.ttf" id="1_yubou"]
+[ext_resource type="Texture2D" uid="uid://duuctmmb2t550" path="res://assets/symbols of ccokies/symbol_circle.png" id="2_sjwyb"]
+[ext_resource type="Texture2D" uid="uid://ctsambqvlkrfr" path="res://assets/symbols of ccokies/symbol_heart.png" id="3_5kh4o"]
+[ext_resource type="Texture2D" uid="uid://psc0yxyw8lt7" path="res://assets/symbols of ccokies/symbol_moon.png" id="4_s2npe"]
+[ext_resource type="Texture2D" uid="uid://cbytmfalgihiq" path="res://assets/symbols of ccokies/symbol_pentagon.png" id="5_g2v8e"]
+[ext_resource type="Texture2D" uid="uid://co6vstfw7p5w7" path="res://assets/symbols of ccokies/symbol_square.png" id="6_1kaiv"]
+[ext_resource type="Texture2D" uid="uid://ch8aq5go37kru" path="res://assets/symbols of ccokies/symbol_star.png" id="7_upmhx"]
+[ext_resource type="Texture2D" uid="uid://cg4e1v5wvtboj" path="res://assets/symbols of ccokies/symbol_thunder.png" id="8_ihktq"]
+[ext_resource type="Texture2D" uid="uid://c8ia4geruyyns" path="res://assets/symbols of ccokies/symbol_triangle.png" id="9_igvt4"]
+[ext_resource type="Texture2D" uid="uid://g8yndpftok87" path="res://assets/symbols of ccokies/symbol_umbrella.png" id="10_x8pta"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rns2u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u001w"]
+bg_color = Color(0.779291, 0.779291, 0.779291, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u2dgd"]
+bg_color = Color(1.63645e-06, 0.53461, 0.538672, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bt76a"]
+bg_color = Color(0.963782, 0.866012, 0.611656, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 5)
+
+[node name="game_UI" type="Node2D"]
+script = ExtResource("1_5kh4o")
+
+[node name="background" type="Polygon2D" parent="."]
+color = Color(0, 0.179944, 0.405084, 1)
+polygon = PackedVector2Array(0, 500, 1150, 500, 1150, 650, 0, 650)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.985417
+anchor_top = 0.801852
+anchor_right = 2.46458
+anchor_bottom = 1.85185
+offset_left = 970.417
+offset_top = 488.926
+offset_right = 1045.42
+offset_bottom = 550.926
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+metadata/_edit_use_anchors_ = true
+
+[node name="menu" type="Button" parent="Control/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_yubou")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rns2u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u001w")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u2dgd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bt76a")
+text = "MENU
+"
+
+[node name="exit" type="Button" parent="Control/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_yubou")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rns2u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u001w")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u2dgd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bt76a")
+text = "EXIT"
+
+[node name="symbol_list" type="Node2D" parent="."]
+visible = false
+
+[node name="SymbolCircle" type="Sprite2D" parent="symbol_list"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(291, 570)
+scale = Vector2(2, 2)
+texture = ExtResource("2_sjwyb")
+
+[node name="SymbolHeart" type="Sprite2D" parent="symbol_list"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(504, 570)
+scale = Vector2(2, 2)
+texture = ExtResource("3_5kh4o")
+
+[node name="SymbolMoon" type="Sprite2D" parent="symbol_list"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(809, 570)
+scale = Vector2(2, 2)
+texture = ExtResource("4_s2npe")
+
+[node name="SymbolPentagon" type="Sprite2D" parent="symbol_list"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(608, 570)
+scale = Vector2(2, 2)
+texture = ExtResource("5_g2v8e")
+
+[node name="SymbolSquare" type="Sprite2D" parent="symbol_list"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(181, 570)
+scale = Vector2(2, 2)
+texture = ExtResource("6_1kaiv")
+
+[node name="SymbolStar" type="Sprite2D" parent="symbol_list"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(398, 570)
+scale = Vector2(2, 2)
+texture = ExtResource("7_upmhx")
+
+[node name="SymbolThunder" type="Sprite2D" parent="symbol_list"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(874, 570)
+scale = Vector2(2, 2)
+texture = ExtResource("8_ihktq")
+
+[node name="SymbolTriangle" type="Sprite2D" parent="symbol_list"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(69, 570)
+scale = Vector2(2, 2)
+texture = ExtResource("9_igvt4")
+
+[node name="SymbolUmbrella" type="Sprite2D" parent="symbol_list"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(708, 570)
+scale = Vector2(2, 2)
+texture = ExtResource("10_x8pta")
+
+[connection signal="pressed" from="Control/VBoxContainer2/menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer2/exit" to="." method="_on_exit_pressed"]
