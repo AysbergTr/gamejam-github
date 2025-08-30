@@ -17,6 +17,10 @@ config/icon="res://icon.svg"
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/resizable=false
+window/stretch/aspect="keep_height"
 mouse_cursor/custom_image="uid://mgbakxnts8rp"
 mouse_cursor/custom_image_hotspot=Vector2(8, 8)
 
