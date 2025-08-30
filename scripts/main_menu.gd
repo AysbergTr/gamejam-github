@@ -6,7 +6,11 @@ var button_type = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+		#fade out an
+	$Fade_transition.color.a = 255
+	$Fade_transition.show()
+	$Fade_transition/Fade_timer.start()
+	$Fade_transition/AnimationPlayer.play("FadeOut")
 
  
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -39,3 +43,6 @@ func _on_fade_timer_timeout() -> void:
 		
 	elif button_type == "exit":
 		get_tree().quit()
+	
+	else:
+		$Fade_transition.hide()

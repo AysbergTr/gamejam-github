@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2eat7gmiyjyn"]
+
+[ext_resource type="Script" uid="uid://4md6k07er774" path="res://scripts/badge.gd" id="1_crp2v"]
+[ext_resource type="Texture2D" uid="uid://co6vstfw7p5w7" path="res://assets/symbols of ccokies/symbol_square.png" id="1_fe3nh"]
+
+[node name="badge" type="Node2D"]
+script = ExtResource("1_crp2v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -10)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_fe3nh")

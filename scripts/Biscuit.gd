@@ -62,6 +62,8 @@ var segments
 #main collision
 @onready var main_collision: CollisionShape2D = $CollisionShape2D
 
+@onready var background2: ColorRect = $ColorRect
+@onready var background: Polygon2D = $Polygon2D
 
 #Cracking variables
 var clicked_segments := 0
@@ -74,12 +76,66 @@ signal off_cookie
 signal biscuitCleared #won
 signal biscuitLost #lost
 
+#camera
+@onready var camera: Camera2D = %Camera2D
+
+
 #lose condition-> if crack >= 3 
 var _crack = 0 
 @onready var cracks_img: Sprite2D = $BaseCrackedBiscuit
 var alpha_value = 0
 
+var pos_list :Array = [Vector2(5.0, -177.0), Vector2(5.0, -177.0), Vector2(4.0, -145.0), Vector2(5.0, -177.0), Vector2(5.0, -177.0)]
+#var list = [$CollisionShape2D, $ColorRect,$Sprite2D ,$"Shape Collisions", $BaseCrackedBiscuit, $Cookie_symbol]
+
 func _ready() -> void:
+	print(find_initial_pos())
+	
+func find_initial_pos() -> Array:
+	var list = [$CollisionShape2D,$Sprite2D ,$"Shape Collisions", $BaseCrackedBiscuit, $Cookie_symbol]
+	var pos_list_init = []
+	
+	for object in list:
+		pos_list_init.append(object.global_position)
+	
+	return pos_list_init
+	#print(typeof(pos_list))
+	
+func reset_cookie() -> void:
+
+	#print(pos_list)
+	_crack = 0
+	alpha_value = 0
+	clicked_segments = 0
+	var segments_list = [tri_segments, sqr_segments, crc_segments,
+						 str_segments, hrt_segments, pnt_segments,
+						 umb_segments, mon_segments, thn_segments]
+	
+	for segment in segments_list:
+		segment.hide() 
+	
+	
+	main_collision.disabled = false
+	shape_collisions.visible = true
+	cookie_symbol.visible= false
+	
+	var tween = create_tween()
+	tween.set_parallel(true)
+	#making them normal size again.
+	tween.tween_property(sprite_2d, "scale", Vector2(2,2) ,1)
+	tween.tween_property(cracks_img, "scale", Vector2(2,2) ,1)
+	#making them appear again
+	tween.tween_property(sprite_2d, "modulate:a", 1, 1)
+	#making symbol normal again
+	tween.tween_property(cookie_symbol, "scale", Vector2(2, 2), 1)
+
+
+func create_cookie() -> void:
+	reset_cookie()
+	
+	var tween = create_tween()
+	tween.tween_property(camera, "position", Vector2(0,-250), 1)
+	
 	#segment lists
 	var segments_list = [tri_segments, sqr_segments, crc_segments, 
 						 str_segments, hrt_segments, pnt_segments,
@@ -94,8 +150,10 @@ func _ready() -> void:
 	#inside symbol sprite
 	cookie_symbol.texture = CookieSymbolShape[CookieName]
 	
+	
 	for child in segments.get_children():
 		child.connect("clicked", _on_segment_clicked)
+
 
 #Checks when a segment clicked
 func _on_segment_clicked() -> void:
@@ -107,18 +165,18 @@ func disableCollisions() -> void:
 	main_collision.disabled = true
 	shape_collisions.visible = false
 
+
 func GameWon() -> void:
 	disableCollisions()
 	var tween = create_tween()
 	print("All segments cleared")
-	emit_signal("biscuitCleared")
-	main_collision.disabled
+	emit_signal("biscuitCleared", CookieName)
 	cookie_symbol.visible= true
 	segments.visible = false
 	
 	#tween effects
 	tween.set_parallel(true)
-	#making them small
+	#making them smallWS
 	tween.tween_property(sprite_2d, "scale", Vector2(0.1,0.1) ,1)
 	tween.tween_property(cracks_img, "scale", Vector2(0.1,0.1) ,1)
 	#making them disappear
@@ -127,8 +185,11 @@ func GameWon() -> void:
 	#making the symbol pop out
 	tween.tween_property(cookie_symbol, "scale", Vector2(2.5, 2.5), 1)
 	
+	#tween.tween_property(background, "modulate:a", 0, .5)
 	
-	
+	#camera going back
+	tween.set_parallel(false)
+	tween.tween_property(camera, "position", Vector2(0,0), 2)
 
 func GameOver() -> void:
 	_crack += 1
@@ -206,3 +267,43 @@ func _on_thunder_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 	if CookieName == 8:
 		if event is InputEventMouseButton and event.is_pressed():
 			GameOver()
+
+
+
+
+#Cookie Name will change based on door
+func _on_door0_cookie_selected(cookie_index) -> void:
+	CookieName = cookie_index
+	create_cookie()
+
+func _on_door_2_cookie_selected(cookie_index) -> void:
+	CookieName = cookie_index
+	create_cookie()
+
+func _on_door_3_cookie_selected(cookie_index) -> void:
+	CookieName = cookie_index
+	create_cookie()
+
+func _on_door_4_cookie_selected(cookie_index) -> void:
+	CookieName = cookie_index
+	create_cookie()
+	
+func _on_door_5_cookie_selected(cookie_index) -> void:
+	CookieName = cookie_index
+	create_cookie()
+
+func _on_door_6_cookie_selected(cookie_index) -> void:
+	CookieName = cookie_index
+	create_cookie()
+
+func _on_door_7_cookie_selected(cookie_index) -> void:
+	CookieName = cookie_index
+	create_cookie()
+
+func _on_door_8_cookie_selected(cookie_index) -> void:
+	CookieName = cookie_index
+	create_cookie()
+
+func _on_door_9_cookie_selected(cookie_index) -> void:
+	CookieName = cookie_index
+	create_cookie()
