@@ -10,7 +10,7 @@ script = ExtResource("1_iywne")
 RANDOM_SHAKE_STRENGTH = 1.0
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(-249, -139)
+position = Vector2(-249, -127)
 color = Color(0.0745098, 0.137255, 0.533333, 1)
 polygon = PackedVector2Array(0, 0, 0, 250, 500, 250, 500, 0)
 
