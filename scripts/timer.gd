@@ -2,7 +2,7 @@ extends Control
 
 var total_time_in_secs: int = 0
 
-var time_limit_in_secs = 180
+var time_limit_in_secs = 150
 
 signal out_of_time
 
